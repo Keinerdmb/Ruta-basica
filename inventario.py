@@ -41,9 +41,9 @@ def agregar_producto():
 #-----------------------------------
 
     producto = {
-        "Nombre": nombre,
-        "Precio": precio,
-        "Cantidad": cantidad
+        "nombre": nombre,
+        "precio": precio,
+        "cantidad": cantidad
     }
 
 #-----------------------------------
