@@ -19,7 +19,7 @@ def mostrar_inventario(inventario):
 
     else:
         for producto in inventario:
-            print(f"Producto:{producto['nombre']} | Precio: {producto['precio']} | Cantidad: {producto['cantidad']}")
+            print(f"Producto:{producto['nombre'].capitalize()} | Precio: {producto['precio']} | Cantidad: {producto['cantidad']}")
         print()
 
 def calcu_estadisticas(inventario):
@@ -42,3 +42,27 @@ def calcu_estadisticas(inventario):
 
     print(f"Valor total del inventario {valor_total}")
     print(f"Productos totales: {total_productos}\n")
+
+def buscar_producto(inventario, nombre):
+
+    for producto in inventario:
+        if producto["nombre"] == nombre:
+            return producto
+        else:
+            print("No esta registrado el producto.\n")
+    return None    
+
+def actualizar_producto(inventario, nombre, n_precio=None, n_cantidad=None):
+   producto = buscar_producto(inventario, nombre)
+
+   if producto:
+        if n_precio is not None:
+           producto['precio'] = n_precio
+        if n_cantidad is not None:
+            producto['cantidad'] = n_cantidad
+            print(f"Producto '{nombre}' actualizado correctamente.")
+        else:
+            print(f"Producto '{nombre}' no se encontro en el inventario.")       
+
+
+   
