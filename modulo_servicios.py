@@ -46,13 +46,14 @@ def calcu_estadisticas(inventario):
 def buscar_producto(inventario, nombre):
 
     for producto in inventario:
-        if producto["nombre"] == nombre:
+        if producto['nombre'] == nombre:
             return producto
         else:
             print("No esta registrado el producto.\n")
     return None    
 
 def actualizar_producto(inventario, nombre, n_precio=None, n_cantidad=None):
+   
    producto = buscar_producto(inventario, nombre)
 
    if producto:
