@@ -70,6 +70,7 @@ while running :
                 break
             try:
                 n_precio = float(cambio)
+                break
             except ValueError:
                 print("Deberia ser un número.")
                 
@@ -80,10 +81,11 @@ while running :
                 break
             try:
                 n_cantidad = int(cambio)
+                break
             except ValueError:    
                 print("Deberia ser un número.")
-                
-        actualizar_producto(inventario, nombre, nuevo_precio=None, nueva_cantidad=None)
+
+        actualizar_producto(inventario, nombre, n_precio=None, n_cantidad=None)
     else:
         print("Ingrese una opción valida. intente nuevamente. \n")
 
