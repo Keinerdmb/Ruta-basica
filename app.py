@@ -1,4 +1,5 @@
 from modulo_servicios import*
+from servicio_csv import*
 
 inventario = []
 
@@ -16,7 +17,8 @@ while running :
     print("5. Actualizar producto.")
     print("6. Eliminar producto.")
     print("7. Guardar en CSV.")
-    print("8. Salir.")
+    print("8. Cargar desde CSV.")
+    print("9. Salir.")
 
     opcion = input("Seleccione una opción: \n")
 
@@ -46,7 +48,7 @@ while running :
     elif opcion == "3":
         calcu_estadisticas(inventario)
 
-    elif opcion == "8":
+    elif opcion == "9":
         print("Saliendo del sistema...")
         running = False
 
@@ -100,9 +102,15 @@ while running :
         nombre = input("Nombre del producto a eliminar: ").lower()
         eliminar_producto(inventario, nombre)
 
+     # GUARDAR CSV
     elif opcion == "7":
-    ruta = input("Nombre del archivo (ej: inventario.csv): ")
-    guardar_csv(inventario, ruta)    
+        ruta = input("nombre del archivo (ej: inventario.csv): ")
+        guardar_csv(inventario, ruta)
+
+    # CARGAR CSV
+    elif opcion == "8":
+        ruta = input("Archivo a cargar: ")
+        inventario = cargar_csv(ruta)
 
     else:
         print("Ingrese una opción valida. intente nuevamente. \n")
