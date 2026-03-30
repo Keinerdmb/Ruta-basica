@@ -9,13 +9,14 @@ running = True
 
 while running :
     print("=======MENÚ=======")
-    print("1. Agregar producto.")
+    print("1. Agregar producto.") 
     print("2. Mostrar inventario.")
     print("3. Calcular estadisticas.")
     print("4. Buscar producto.")
     print("5. Actualizar producto.")
     print("6. Eliminar producto.")
-    print("7. Salir.")
+    print("7. Guardar en CSV.")
+    print("8. Salir.")
 
     opcion = input("Seleccione una opción: \n")
 
@@ -45,7 +46,7 @@ while running :
     elif opcion == "3":
         calcu_estadisticas(inventario)
 
-    elif opcion == "7":
+    elif opcion == "8":
         print("Saliendo del sistema...")
         running = False
 
@@ -98,6 +99,10 @@ while running :
     elif opcion == "6":
         nombre = input("Nombre del producto a eliminar: ").lower()
         eliminar_producto(inventario, nombre)
+
+    elif opcion == "7":
+    ruta = input("Nombre del archivo (ej: inventario.csv): ")
+    guardar_csv(inventario, ruta)    
 
     else:
         print("Ingrese una opción valida. intente nuevamente. \n")
