@@ -1,38 +1,138 @@
-# Programa Simple de Inventario
+# Sistema de Inventario en Python
 
 ## Descripción
-Este proyecto es un programa simple de inventario escrito en Python. Permite calcular el costo total de un producto utilizando el precio y la cantidad ingresados por el usuario.
 
-El programa está diseñado para practicar conceptos básicos de Python como:
-- Variables
-- Entrada de datos (`input`)
-- Operaciones matemáticas
-- Mostrar información en pantalla (`print`)
+Este proyecto es un sistema de inventario desarrollado en Python que permite gestionar productos mediante operaciones CRUD (Crear, Leer, Actualizar y Eliminar), así como almacenar y recuperar la información utilizando archivos CSV.
+
+El sistema fue diseñado para reforzar conceptos fundamentales y prácticos de programación, evolucionando desde un programa básico hasta una aplicación modular y persistente.
+
+---
+## Diagrama de flujo
+
+![Diagrama_de_flujo](<Diagrama de flujo.png>)
+
+---
+
+## Funcionalidades
+
+El sistema permite:
+
+* Agregar productos al inventario
+* Mostrar todos los productos registrados
+* Buscar productos por nombre
+* Actualizar precio y/o cantidad de un producto
+* Eliminar productos del inventario
+* Calcular estadísticas del inventario:
+
+  * Valor total
+  * Cantidad total de productos
+  * Producto más caro
+  * Producto con mayor stock
+* Guardar el inventario en un archivo CSV
+* Cargar el inventario desde un archivo CSV
+
+---
+
+## Estructura del proyecto
+
+El proyecto está organizado en múltiples archivos para mejorar la modularidad:
+
+```
+📁 proyecto/
+│
+├── app.py            # Archivo principal (menú e interacción)
+├── servicios.py      # Lógica del inventario (CRUD y estadísticas)
+├── archivos.py       # Manejo de archivos CSV
+└── inventario.csv    # Archivo generado (persistencia de datos)
+```
+
+---
+
+## Tecnologías y conceptos aplicados
+
+Durante el desarrollo se aplicaron los siguientes conceptos:
+
+* Listas y diccionarios
+* Funciones y modularización
+* Manejo de errores con try/except
+* Bucles (while, for)
+* Condicionales (if, elif, else)
+* Lectura y escritura de archivos (CSV)
+* Separación de responsabilidades en módulos
 
 ---
 
 ## Cómo funciona
-1. El programa solicita al usuario el nombre del producto.
-2. Luego pide el precio del producto.
-3. Después solicita la cantidad.
-4. El programa calcula el costo total multiplicando el precio por la cantidad.
-5. Finalmente muestra en pantalla la información del producto y el costo total.
+
+1. El usuario interactúa con un menú en consola.
+2. Puede seleccionar diferentes opciones (1–9).
+3. El sistema ejecuta funciones según la opción elegida.
+4. Los datos se almacenan en memoria (lista de diccionarios).
+5. Opcionalmente, se pueden guardar o cargar desde un archivo CSV.
 
 ---
 
-## Diagrama de flujo
+## Menú del sistema
 
-![Diagrama de Flujo](image-1.png)
+```
+1. Agregar producto
+2. Mostrar inventario
+3. Buscar producto
+4. Actualizar producto
+5. Eliminar producto
+6. Estadísticas
+7. Guardar CSV
+8. Cargar CSV
+9. Salir
+```
 
-# Cómo abrir y ejecutar el proyecto
+---
 
-## 1. Instalar los requisitos
-Antes de ejecutar el programa asegúrate de tener instalado:
+## Ejemplo de uso
 
-- Python 3
-- Git
+```
+==== MENÚ ====
+1. Agregar producto
+2. Mostrar inventario
+...
 
-Puedes verificarlo con los siguientes comandos:
+Seleccione una opción: 1
+
+Nombre: Laptop
+Precio: 800
+Cantidad: 2
+
+Producto agregado correctamente.
+```
+
+---
+
+## Persistencia de datos
+
+El sistema permite guardar y cargar el inventario mediante archivos CSV con el siguiente formato:
+
+```
+nombre,precio,cantidad
+laptop,800,2
+mouse,50,5
+```
+
+Además:
+
+* Se validan errores de lectura/escritura
+* Se manejan archivos inexistentes
+* Se evita que el programa se cierre ante errores
+
+---
+
+## Cómo ejecutar el proyecto
+
+### 1. Requisitos
+
+* Python 3
+* Git
+
+Verificar instalación:
 
 ```bash
 python --version
@@ -41,75 +141,42 @@ git --version
 
 ---
 
-## 2. Clonar el repositorio desde GitHub
-Abre la terminal o consola y ejecuta el siguiente comando:
+### 2. Clonar el repositorio
 
 ```bash
-https://github.com/Keinerdmb/Proyecto_inventario_pyhton.git
+git clone https://github.com/Keinerdmb/Proyecto_inventario_pyhton.git
 ```
-
-Esto descargará el proyecto en tu computadora.
 
 ---
 
-## 3. Entrar a la carpeta del proyecto
-Después de clonar el repositorio, entra a la carpeta con:
+### 3. Acceder al proyecto
 
 ```bash
-cd Ruta-basica
+cd "Nombre de la carpeta donde se guardo"
 ```
 
 ---
 
-## 4. Verificar que el archivo exista
-Puedes comprobar que el archivo esté en la carpeta usando:
+### 4. Ejecutar el programa
 
 ```bash
-ls
-```
-
-Deberías ver el archivo:
-
-```
-inventario.py
-```
-
----
-
-## 5. Ejecutar el programa
-Para ejecutar el programa escribe:
-
-```bash
-python3 inventario.py
-```
-
----
-
-## 6. Ingresar los datos
-El programa te pedirá:
-
-- Nombre del producto
-- Precio del producto
-- Cantidad
-
-Después mostrará un resúmen del producto y el **costo total**.
-
----
-
-## Ejemplo de uso
-
-```
-Ingrese el nombre del producto: Laptop
-Ingrese el precio: 800
-Ingrese la cantidad: 2
-
-Producto: Laptop
-Precio: 800
-Cantidad: 2
-Costo total: 1600
+python app.py
 ```
 
 ---
 
 ## Estado del proyecto
+
+El sistema se encuentra funcional y cumple con:
+
+* Operaciones CRUD completas
+* Persistencia en archivos CSV
+* Manejo de errores
+* Estructura modular
+
+---
+
+## Autor
+
+Keiner Martinez.
 El programa actualmente funciona correctamente y calcula el costo total de los productos.
